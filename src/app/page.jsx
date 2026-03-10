@@ -8,12 +8,14 @@ export default function Drag() {
   const { x, y } = useFollowPointer(ref);
 
   return (
-    <motion.img
-      ref={ref}
-      src="https://media.istockphoto.com/id/1415430015/vector/deflating-balloon-flies-away-flat-cartoon-vector-illustration-isolated-on-white.jpg?s=612x612&w=0&k=20&c=KYzLtrbv5kTnAcFsKoI2OYIBz5OxW4AFc4N8gV6m9P0="
-      alt="Deflating Balloon"
-      style={{ ...ball, x, y, objectFit: "cover" }}
-    />
+    <div style={containerStyle}>
+      <motion.img
+        ref={ref}
+        src="https://media.istockphoto.com/id/1415430015/vector/deflating-balloon-flies-away-flat-cartoon-vector-illustration-isolated-on-white.jpg?s=612x612&w=0&k=20&c=KYzLtrbv5kTnAcFsKoI2OYIBz5OxW4AFc4N8gV6m9P0="
+        alt="Deflating Balloon"
+        style={{ ...ball, x, y, objectFit: "cover" }}
+      />
+    </div>
   );
 }
 
@@ -43,9 +45,20 @@ export function useFollowPointer(ref) {
   return { x, y };
 }
 
+const containerStyle = {
+  width: "100vw",
+  height: "100vh",
+  backgroundImage: `url("https://cdn.cosmos.so/b638a3d5-7ed0-4531-bab5-45e02fc88175?format=jpeg")`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  overflow: "hidden",
+  position: "relative",
+};
+
 const ball = {
   width: 100,
   height: 100,
   borderRadius: "50%",
+  objectFit: "cover",
   position: "absolute",
 };
