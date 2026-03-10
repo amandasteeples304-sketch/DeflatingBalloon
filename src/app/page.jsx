@@ -53,6 +53,7 @@ const containerStyle = {
   backgroundPosition: "center",
   overflow: "hidden",
   position: "relative",
+  cursor: "none",
 };
 
 const ball = {
